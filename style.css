@@ -1,6 +1,13 @@
 
 /* Estilos gerais do corpo da página */
-html, body {
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #20833e;
+}
+
+body {
     height: 100%;
     width: 100%;
     margin: 0;
