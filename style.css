@@ -132,6 +132,15 @@ button:disabled {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    text-align: center;
+}
+
+#upgrade-list li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 .upgrade-content button{
