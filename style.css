@@ -45,14 +45,11 @@ body {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
     font-family: 'MinhaFonte';
-    padding: 20px;
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
+    width: 300px;
     display: none;
-    z-index: 1000;
 }
 
 
