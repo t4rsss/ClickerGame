@@ -29,7 +29,6 @@ html, body {
     width: 300px;
     height: 500px;
 }
-
 /* Contêiner do jogo (inicialmente escondido) */
 .game-container {
     text-align: center;
@@ -67,6 +66,13 @@ html, body {
     font-size: 20px;
     margin-bottom: 20px;
     min-width: 120px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Faz o elemento ocupar toda a largura da tela */
+    text-align: left; /* Alinha o texto à esquerda */
+    color: white; /* Cor do texto para contraste */
+    padding: 10px; /* Espaçamento interno */
 }
 
 /* Estilo dos botões */
@@ -144,7 +150,7 @@ button:disabled {
 }
 
 .upgrade-content button{
-    height: 33px;
+    height: 40px;
     font-size: 13px;
     margin: 3px 10px;
     padding: 0 15px;
