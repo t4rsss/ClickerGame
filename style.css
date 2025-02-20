@@ -131,17 +131,7 @@ button:disabled {
 #upgrade-list {
     list-style-type: none;
     padding: 0;
-    margin: 0 auto;
-    text-align: center;
-    max-width: 80%;
-}
-
-#upgrade-list li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
+    margin: 0;
 }
 
 .upgrade-content button{
