@@ -37,29 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Função para inicializar o jogo
-    function inicializarJogo() {
-        function salvarProgresso() {
-            localStorage.setItem('btc', btc);
-            localStorage.setItem('btcPorClique', btcPorClique);
-            localStorage.setItem('btcPorSegundo', btcPorSegundo);
-        }
-
-        function carregarProgresso() {
-            return {
-                btc: parseFloat(localStorage.getItem('btc')) || 0,
-                btcPorClique: parseInt(localStorage.getItem('btcPorClique')) || 1,
-                btcPorSegundo: parseInt(localStorage.getItem('btcPorSegundo')) || 0
-            };
-        }
-
-        let { btc, btcPorClique, btcPorSegundo } = carregarProgresso();
-
-        const btcDisplay = document.getElementById("btc");
-        const hackearBtn = document.getElementById("hackear");
-
-        function atualizarDisplay() {
-            btcDisplay.innerText = `BTC: ${btc.toFixed(2)}`;
-        }
 
         hackearBtn.addEventListener("click", () => {
             btc += btcPorClique;
@@ -76,13 +53,36 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarDisplay();
     }
 
-    let upgrades = [
-        { nome: "Melhor CPU", preco: 10, efeito: () => btcPorClique += 1 },
-        { nome: "Hack Automático", preco: 50, efeito: () => btcPorSegundo += 1 },
-        { nome: "Proxy Rápido", preco: 100, efeito: () => btcPorClique += 2 }
-    ];
+    function inicializarJogo() {
+        let { btc, btcPorClique, btcPorSegundo } = carregarProgresso();
+        const btcDisplay = document.getElementById("btc");
+        const hackearBtn = document.getElementById("hackear");
 
-    function atualizarLoja() {
+        let upgrades = [
+            { nome: "Melhor CPU", preco: 10, efeito: () => btcPorClique += 1 },
+            { nome: "Hack Automático", preco: 50, efeito: () => btcPorSegundo += 1 },
+            { nome: "Proxy Rápido", preco: 100, efeito: () => btcPorClique += 2 }
+        ];
+
+        function atualizarDisplay() {
+            btcDisplay.innerText = `BTC: ${btc.toFixed(2)}`;
+        }
+
+        function salvarProgresso() {
+            localStorage.setItem('btc', btc);
+            localStorage.setItem('btcPorClique', btcPorClique);
+            localStorage.setItem('btcPorSegundo', btcPorSegundo);
+        }
+
+        function carregarProgresso() {
+            return {
+                btc: parseFloat(localStorage.getItem('btc')) || 0,
+                btcPorClique: parseInt(localStorage.getItem('btcPorClique')) || 1,
+                btcPorSegundo: parseInt(localStorage.getItem('btcPorSegundo')) || 0
+            };
+        }
+
+        function atualizarLoja() {
         upgradeList.innerHTML = "";
         upgrades.forEach((upgrade, index) => {
             const item = document.createElement("li");
