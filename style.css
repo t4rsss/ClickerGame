@@ -45,7 +45,7 @@ body {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
     font-family: 'MinhaFonte';
-    padding: 10px;
+    padding: 10px 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
     width: 100%;
     position: fixed;
@@ -53,15 +53,22 @@ body {
     left: 0;
     display: none;
     z-index: 1000;
-    justify-content: space-around;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
 .game-container button {
     width: auto;
-    height:30px ;
+    height: 30px;
     font-size: 13px;
-    
+    margin: 0 10px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-container h1 {
