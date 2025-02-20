@@ -1,9 +1,16 @@
+let btc = 0;
+let btcPorClique = 1;
+let btcPorSegundo = 0;
+
 document.addEventListener("DOMContentLoaded", () => {
     const menuDiv = document.querySelector(".menu-container");
     const gameDiv = document.querySelector(".game-container");
-
     const novoJogoBtn = document.getElementById("novo-jogo-btn");
     const continuarJogoBtn = document.getElementById("continuar-jogo-btn");
+    const upgradeMenu = document.getElementById("upgrade-menu");
+    const openUpgradeBtn = document.getElementById("open-upgrade-menu");
+    const closeUpgradeBtn = document.querySelector(".close-btn");
+    const upgradeList = document.getElementById("upgrade-list");
 
     // Função para mostrar a tela do jogo e esconder o menu
     function mostrarJogo() {
@@ -35,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Função para inicializar o jogo
     function inicializarJogo() {
         // Função para salvar o progresso
-        function salvarProgresso(btc, btcPorClique, btcPorSegundo) {
-            localStorage.setItem('btc', btc);
-            localStorage.setItem('btcPorClique', btcPorClique);
-            localStorage.setItem('btcPorSegundo', btcPorSegundo);
+        function salvarProgresso() {
+            localStorage.setItem('btc', btc.toString());
+            localStorage.setItem('btcPorClique', btcPorClique.toString());
+            localStorage.setItem('btcPorSegundo', btcPorSegundo.toString());
         }
 
         // Função para carregar o progresso
@@ -101,13 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mostrarMenu();  // Exibe o menu quando a página é carregada
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const upgradeMenu = document.getElementById("upgrade-menu");
-    const openUpgradeBtn = document.getElementById("open-upgrade-menu");
-    const closeUpgradeBtn = document.querySelector(".close-btn");
-    const upgradeList = document.getElementById("upgrade-list");
-
-    let upgrades = [
+let upgrades = [
         { nome: "Melhor CPU", preco: 10, efeito: () => btcPorClique += 1 },
         { nome: "Hack Automático", preco: 50, efeito: () => btcPorSegundo += 1 },
         { nome: "Proxy Rápido", preco: 100, efeito: () => btcPorClique += 2 }
