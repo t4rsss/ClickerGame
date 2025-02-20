@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- Menu Inicial -->
     <div class="menu-container">
-        <h1>Menu Principal</h1>
-        <button class="btn" id="novo-jogo-btn">Novo Jogo</a>
-        <button class="btn" id="continuar-jogo-btn">Continuar Jogo</button>
+        <h1>Hacker Clicker</h1>
+        <button id="novo-jogo-btn">Novo Jogo</button>
+        <button id="continuar-jogo-btn">Continuar</button>
     </div>
 
-    <div class="game-container" style="display: none;">
-        <p id="btc">BTC: 0</p>
+    <!-- Tela do Jogo -->
+    <div class="game-container hidden">
+        <h2 id="btc">BTC: 0</h2>
         <button id="hackear">Hackear</button>
-        <button id="upgrade-clique">Upgrade de Clique - 10 BTC</button>
-        <button id="upgrade-auto">Automatico - 50 BTC</button>
+        <button id="open-upgrade-menu">⚡</button>
     </div>
 
-    <button id="open-upgrade-menu">⚙️</button>
-
+    <!-- Loja de Upgrades -->
     <div id="upgrade-menu" class="hidden">
         <div class="upgrade-content">
             <h2>Loja de Upgrades</h2>
-            <button class="close-btn">X</button>
             <ul id="upgrade-list"></ul>
+            <button id="close-upgrade-btn" class="close-btn">Fechar</button>
         </div>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>
