@@ -69,10 +69,18 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Faz o elemento ocupar toda a largura da tela */
-    text-align: left; /* Alinha o texto à esquerda */
-    color: white; /* Cor do texto para contraste */
-    padding: 10px; /* Espaçamento interno */
+    width: 100%;
+    text-align: left;
+    color: white;
+    padding: 10px;
+}
+
+#hackear {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
 }
 
 /* Estilo dos botões */
