@@ -1,19 +1,25 @@
-
-/* Estilos gerais do corpo da página */
+@font-face {
+  font-family: 'MinhaFonte';  
+  src: url('MinhaFonte.ttf') format('truetype'); 
+}
 html {
     height: 100%;
     width: 100%;
     margin: 0;
     background-color: #20833e;
+    
 }
 
 body {
     height: 100%;
     width: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #20833e;
-    color: #bc2020;
+    font-family: 'MinhaFonte';
+    background-image: url(hck1.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #a3c255;
 }
 
 body {
@@ -25,18 +31,20 @@ body {
 /* Contêiner do menu principal */
 .menu-container {
     text-align: center;
-    background-color: #1e1e1e;
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 30px;
-    border-radius: 10px;
+    border:2px solid #6fa341;;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
     width: 300px;
+    height: 500px;
     display: block;
 }
 
 /* Contêiner do jogo (inicialmente escondido) */
 .game-container {
     text-align: center;
-    background-color: #1e1e1e;
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: 'MinhaFonte';
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
@@ -44,11 +52,7 @@ body {
     display: none;
 }
 
-/* Estilo do título */
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+
 
 /* Estilo do texto de BTC */
 #btc {
@@ -58,49 +62,30 @@ h1 {
 
 /* Estilo dos botões */
 button {
-    background-color: #d32f2f;
-    color: white;
+    background-color: rgba(56, 116, 80, 0.5); 
+    color: #a3c255;
     padding: 10px 20px;
     margin: 10px 0;
-    border: none;
+    border: 5px solid #6fa341;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    font-family: 'MinhaFonte';
+    font-size: 18px;
     width: 100%;
     transition: background-color 0.3s ease;
 }
-
-.myButton {
-    box-shadow: 1px 10px 14px -7px #3e473c;
-    background: linear-gradient(to bottom, #2b4732 5%, #2e8200 100%);
-    background-color: #2b4732;
-    border: 5px solid #012404;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Courier New;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 13px 32px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #2f6627;
-}
-
+/* Estilo dos botões ao passar o mouse */
 .myButton:hover {
     background: linear-gradient(to bottom, #2e8200 5%, #2b4732 100%);
     background-color: #2e8200;
 }
-
 .myButton:active {
     position: relative;
     top: 1px;
 }
-
 /* Efeito de hover nos botões */
 button:hover {
-    background-color: #f44336;
+    background-color: #12681c;
 }
-
 /* Botões para upgrades */
 button:disabled {
     background-color: #757575;

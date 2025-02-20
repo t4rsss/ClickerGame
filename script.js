@@ -9,12 +9,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function mostrarJogo() {
         menuDiv.style.display = "none";
         gameDiv.style.display = "block";
+        document.body.style.backgroundImage = `url(${Porao.gif})`;
     }
 
     // Função para mostrar o menu e esconder o jogo
     function mostrarMenu() {
         menuDiv.style.display = "block";
         gameDiv.style.display = "none";
+        
     }
 
     // Inicia um novo jogo, apagando dados salvos
