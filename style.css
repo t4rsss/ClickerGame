@@ -108,7 +108,6 @@ button:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden;
 }
 
 #upgrade-menu.active {

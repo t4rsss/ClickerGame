@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Loja de upgrades
+    let btc, btcPorClique, btcPorSegundo;
     let upgrades = [
         { nome: "Melhor CPU", preco: 10, efeito: () => btcPorClique += 1 },
         { nome: "Hack Automático", preco: 50, efeito: () => btcPorSegundo += 1 },
