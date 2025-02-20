@@ -131,13 +131,12 @@ button:disabled {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #387450;
-    color: white;
-    border: none;
+    background-color: rgba(56, 116, 80, 0.5);
+    color: #a3c255;
+    border: 5px solid #6fa341;
     padding: 10px;
     cursor: pointer;
-    border-radius: 50%;
-    width: 50px;
+    width: auto;
     height: 50px;
     font-size: 20px;
     display: flex;
@@ -147,13 +146,15 @@ button:disabled {
 
 /* Botão de fechar dentro do menu de upgrades */
 .close-btn {
-    background: red;
-    color: white;
-    border: none;
+    background-color: rgba(56, 116, 80, 0.5);
+    color: #a3c255;
+    border: 5px solid #6fa341;
     padding: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 10px;
     position: absolute;
+    text-align: center;
     top: 10px;
     right: 10px;
+    width: auto;
 }
