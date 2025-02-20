@@ -76,8 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
         atualizarDisplay();
     }
 
-    // Loja de upgrades
-    let btc, btcPorClique, btcPorSegundo;
     let upgrades = [
         { nome: "Melhor CPU", preco: 10, efeito: () => btcPorClique += 1 },
         { nome: "Hack Automático", preco: 50, efeito: () => btcPorSegundo += 1 },
@@ -87,22 +85,26 @@ document.addEventListener("DOMContentLoaded", () => {
     function atualizarLoja() {
         upgradeList.innerHTML = "";
         upgrades.forEach((upgrade, index) => {
-            let item = document.createElement("li");
+            const item = document.createElement("li");
             item.innerHTML = `${upgrade.nome} - ${upgrade.preco} BTC 
-                <button onclick="comprarUpgrade(${index})">Comprar</button>`;
+                <button class="upgrade-btn" data-index="${index}">Comprar</button>`;
             upgradeList.appendChild(item);
         });
-    }
 
-    window.comprarUpgrade = (index) => {
-        if (btc >= upgrades[index].preco) {
-            btc -= upgrades[index].preco;
-            upgrades[index].efeito();
-            upgrades[index].preco = Math.ceil(upgrades[index].preco * 1.05); // Aumento de 5%
-            atualizarLoja();
-            salvarProgresso();
-        }
-    };
+        document.querySelectorAll('.upgrade-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const index = parseInt(btn.dataset.index);
+                if (btc >= upgrades[index].preco) {
+                    btc -= upgrades[index].preco;
+                    upgrades[index].efeito();
+                    upgrades[index].preco = Math.ceil(upgrades[index].preco * 1.05);
+                    atualizarLoja();
+                    atualizarDisplay();
+                    salvarProgresso();
+                }
+            });
+        });
+    }
 
     openUpgradeBtn.addEventListener("click", () => {
         upgradeMenu.classList.remove("hidden");
