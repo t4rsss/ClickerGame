@@ -4,15 +4,17 @@
 }
 
 html, body {
+    touch-action: manipulation;
     height: 100%;
     width: 100%;
     margin: 0;
     font-family: 'MinhaFonte';
-    background-color: #20833e;
+    background-color: #16161c;
     color: #a3c255;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     background-image: url(hck1.gif);
     background-size: cover;
     background-position: center;
@@ -26,13 +28,12 @@ html, body {
     padding: 30px;
     border: 2px solid #6fa341;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
-    width: 300px;
+    width: 70%;
     height: 500px;
 }
 /* Contêiner do jogo (inicialmente escondido) */
 .game-container {
     text-align: center;
-    padding: 10px 20px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -71,16 +72,20 @@ html, body {
     left: 0;
     width: 100%;
     text-align: left;
-    color: white;
+    color: #a3c255;
     padding: 10px;
 }
 
 #hackear {
     position: fixed;
-    top: 50%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: auto;
+    width: 70%;
+    height: 70px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
 }
 
 /* Estilo dos botões */
@@ -132,13 +137,17 @@ button:disabled {
 
 .upgrade-content {
     padding: 20px;
+    padding-top: 50px;
     color: white;
     text-align: center;
-    width: 80%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
-    border: 5px solid #6fa341;
+    background-image:url(lojinha.gif) ;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #000000;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
@@ -166,20 +175,19 @@ button:disabled {
     align-items: center;
     justify-content: center;
     border: 3px solid #6fa341;
-    
 }
 
 /* Botão para abrir o menu de upgrades */
 #open-upgrade-menu {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 22%;
+    left:10px;
     background-color: rgba(56, 116, 80, 0.5);
     color: #a3c255;
     padding: 10px;
     cursor: pointer;
     width: auto;
-    height: 33px;
+    height: 40px;
     font-size: 13px;
     margin: 3px 10px;
     display: flex;
@@ -190,15 +198,26 @@ button:disabled {
 
 /* Botão de fechar dentro do menu de upgrades */
 .close-btn {
-    background-color: rgba(56, 116, 80, 0.5);
-    color: #a3c255;
-    border: 5px solid #6fa341;
+    background-image: url(x.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
     padding: 10px;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 150px;
     position: absolute;
     text-align: center;
-    top: 10px;
-    right: 10px;
-    width: auto;
+    top: 7px;
+    right: 30px;
+    
+}
+#close-upgrade-btn{
+width: 30px;
+height: 28px;
+border: none; 
+outline: none; 
+}
+.close-btn :hover{
+background-color: rgba(56, 116, 80, 0.0);
 }
