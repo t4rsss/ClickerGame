@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgradeList = document.getElementById("upgrade-list");
     const btcDisplay = document.getElementById("btc");
     const hackearBtn = document.getElementById("hackear");
+    const lojaBtn = 
+document.getElementById("open-upgrade-menu");
 
     function mostrarJogo() {
         menuDiv.style.display = "none";
@@ -45,6 +47,21 @@ document.addEventListener("DOMContentLoaded", () => {
             { nome: "Proxy Rápido", preco: 100, efeito: () => btcPorClique += 2 }
         ];
 
+        openUpgradeBtn.addEventListener("click", () => {
+            upgradeMenu.classList.remove("hidden");
+            hackearBtn.style.display = "none";
+            lojaBtn.style.display = "none";
+            // Oculta o botão "hackear"
+            atualizarLoja();
+        });
+
+        closeUpgradeBtn.addEventListener("click", () => {
+            upgradeMenu.classList.add("hidden");
+            hackearBtn.style.display = "block";
+            lojaBtn.style.display = "block";
+            // Mostra o botão "hackear" novamente
+        });
+
         function atualizarDisplay() {
             btcDisplay.innerText = `BTC: ${btc.toFixed(2)}`;
         }
@@ -64,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (btc >= upgrades[index].preco) {
                         btc -= upgrades[index].preco;
                         upgrades[index].efeito();
-                        upgrades[index].preco = Math.ceil(upgrades[index].preco * 1.05);
+                        upgrades[index].preco = Math.ceil(upgrades[index].preco * 1.8);
                         atualizarLoja();
                         atualizarDisplay();
                         salvarProgresso(btc, btcPorClique, btcPorSegundo);
@@ -112,3 +129,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mostrarMenu();
 });
+
